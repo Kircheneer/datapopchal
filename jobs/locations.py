@@ -1,6 +1,6 @@
 import csv
 
-from nautobot.apps.jobs import Job, register_jobs
+from nautobot.apps.jobs import Job
 from nautobot.extras.jobs import TextVar
 
 
@@ -11,5 +11,3 @@ class LocationJob(Job):
         reader = csv.DictReader(csv_file)
         for row in reader:
             self.logger.info(row)
-
-register_jobs([LocationJob])
