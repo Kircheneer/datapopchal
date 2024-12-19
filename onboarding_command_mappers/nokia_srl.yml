@@ -20,9 +20,6 @@ sync_devices:
       - command: "show interface all | as json"
         parser: "none"
         jpath: "interfaces[?name=='mgmt0'].subinterfaces[0].name"
-        # The management interface can only be called "mgmt0"
-        # https://infocenter.nokia.com/public/SRLINUX216R1A/index.jsp?topic=%2Fcom.srlinux.configbasics%2Fhtml%2Fconfigb-interfaces.html"
-        post_processor: "mgmt0"
   mask_length:
     commands:
       - command: "show interface all | as json"
