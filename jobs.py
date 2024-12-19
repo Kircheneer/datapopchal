@@ -11,7 +11,7 @@ class LocationJob(Job):
     csv_file = TextVar(description="CSV input file.")
 
     def run(self, csv_file):
-        reader = csv.DictReader(csv_file.splitlines())
+        reader = csv.DictReader(csv_file.splitlines(), delimiter=",")
         for row in reader:
             self.logger.info(row)
 
