@@ -26,6 +26,6 @@ sync_devices:
         parser: "none"
         # The management interface can only be called "mgmt0"
         # https://infocenter.nokia.com/public/SRLINUX216R1A/index.jsp?topic=%2Fcom.srlinux.configbasics%2Fhtml%2Fconfigb-interfaces.html"
-        jpath: "interfaces[0].subinterfaces[0].address[?type == `IPv4`].prefix"
+        jpath: "interfaces[].subinterfaces[0].address[?type == `IPv4`].prefix"
         post_processor: '{{ obj[0].split("/")[1] }}'
         iterable_type: "int"
