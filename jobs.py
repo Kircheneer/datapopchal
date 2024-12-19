@@ -48,7 +48,6 @@ class LocationJob(Job):
                 location_type=branch_location_type if row["name"].endswith("BR") else data_center_location_type,
                 defaults={"status": default_status},
             )
-            self.logger.info(row)
 
 
 register_jobs(LocationJob)
